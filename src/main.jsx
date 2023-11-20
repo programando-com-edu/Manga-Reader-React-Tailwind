@@ -11,6 +11,7 @@ import {
 import Products from "./pages/Products";
 import Home from "./pages/Home";
 import Reports from "./pages/Reports";
+import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
 import "./App.css";
 import "./index.css";
@@ -24,10 +25,13 @@ const AppLayout = () => (
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route element={<AppLayout />}>
-      <Route path="/" element={<Home />} />
-      <Route path="/products" element={<Products />} />
-      <Route path="/reports" element={<Reports />} />
+    <Route>
+      <Route element={<AppLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/reports" element={<Reports />} />
+      </Route>
+      <Route path="/login" element={<Login />} />
     </Route>
   )
 );
