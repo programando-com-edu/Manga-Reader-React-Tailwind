@@ -1,6 +1,6 @@
 import React from "react"
 import "./Modais.css";
-export default function Modal({visible, onClose}){
+export default function Modal({visible, onClose, img}){
     const handleOnClose = (e) => {
         if (e.target.id === 'modal-blur') onClose();
     };
@@ -10,7 +10,7 @@ export default function Modal({visible, onClose}){
     return (
         <div id="modal-blur" onClick={handleOnClose} className="modal-blur">
             <div className="modal-box">
-                <div className="w-80 h-full bg-gray-500 rounded-xl flex-shrink-0"></div>
+                <img src={img} className="w-80 h-full bg-gray-500 rounded-xl flex-shrink-0"/>
                 <div className="h-full flex flex-col">
                     <p className="modal-title">Sailor Moon</p>
                     <p className="modal-subtitle">Naoko Takeuch</p>

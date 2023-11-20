@@ -1,13 +1,15 @@
-import React, {useState} from "react";
-import Modal from "../components/Modais/ModalManga"
+import React from "react";
+
+import Card from "../components/Card"
 
 function Home() {
-  const [showModal, setShowModal] = useState(false)
-  const handleOnClose = () => setShowModal(false)
+
   return (
-    <div className="home">
-      <Modal onClose={handleOnClose} visible={showModal} />
-      <button onClick={()=> setShowModal(true)}>Home</button>
+    <div className="grid grid-cols-3 p-20 gap-y-12">
+      <Card />
+      <Card />
+      <Card />
+      <Card />
     </div>
   );
 }

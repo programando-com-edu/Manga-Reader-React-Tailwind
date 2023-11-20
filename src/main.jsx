@@ -32,25 +32,7 @@ const router = createBrowserRouter(
   )
 );
 
-// const router = createBrowserRouter([
-//   {
-//     element: <AppLayout />,
-//     children: [
-//       {
-//         path: "/",
-//         element: <Home />,
-//       },
-//       {
-//         path: "products",
-//         element: <Products />,
-//       },
-//       {
-//         path: "reports",
-//         element: <Reports />,
-//       },
-//     ],
-//   },
-// ]);
+
 
 createRoot(document.getElementById("root")).render(
   <RouterProvider router={router} />
