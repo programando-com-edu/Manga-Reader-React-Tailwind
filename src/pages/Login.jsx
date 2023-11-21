@@ -5,7 +5,7 @@ import OnePieceBanner from "../assets/onepiece-banner.webp"
 function Login() {
 
   return (
-    <div className="bg-slate-200 flex h-screen">
+    <div className="bg-pallete-100 flex h-screen">
         <div className="h-full w-[40%] px-8 py-4 rounded-full flex-shrink-0">
             <img src={OnePieceBanner} className=" w-full h-full bg-gray-500 rounded-2xl flex-shrink-0"/>
         </div>
