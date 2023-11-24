@@ -12,6 +12,7 @@ import Products from "./pages/Products";
 import Home from "./pages/Home";
 import Reports from "./pages/Reports";
 import Login from "./pages/Login";
+import ForgotPassword from "./pages/ForgotPassword";
 import Navbar from "./components/Navbar";
 import "./App.css";
 import "./index.css";
@@ -32,6 +33,7 @@ const router = createBrowserRouter(
         <Route path="/reports" element={<Reports />} />
       </Route>
       <Route path="/login" element={<Login />} />
+      <Route path="/forgot-password" element={<Login />} />
     </Route>
   )
 );

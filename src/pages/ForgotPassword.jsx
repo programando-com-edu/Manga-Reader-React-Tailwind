@@ -4,7 +4,7 @@ import LoginForm from "../components/Login/LoginForm"
 import CadastroForm from "../components/Login/CadastroForm"
 import OnePieceBanner from "../assets/onepiece-banner.webp"
 
-function Login() {
+function ForgotPassword() {
     const [changeForm, setChangeForm] = useState(false)
     const handleOnClickLogin = () => setChangeForm(false)
     const handleOnClickCadastro = () => setChangeForm(true)
@@ -33,4 +33,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default ForgotPassword;
