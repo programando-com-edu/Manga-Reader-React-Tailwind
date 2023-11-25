@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { MdVisibilityOff, MdVisibility  } from "react-icons/md";
+
 
 
 function LoginForm(){
+    const [passwordVisibility, setPasswordVisibility] = useState(false);
     return (
         <>
         <div className="flex flex-col w-96 justify-start">
                 <label htmlFor="username" className="mb-2 text-amethyst-200 font-semibold">Username</label>
                 <input id="username" type="text" className="h-12 px-4 rounded-full border border-gray-300" />
-                <label htmlFor="password" className="mb-2 mt-4 text-amethyst-200 font-semibold">Senha</label>
-                <input id="password" type="password" className="h-12 px-4 rounded-full border border-gray-300" />
+                <div id="password-div" className="flex flex-col relative">
+                    <label htmlFor="password" className="mb-2 mt-4 text-amethyst-200 font-semibold">Senha</label>
+                    <input id="password" type={passwordVisibility ? "text" : "password"} className="h-12 px-4 rounded-full border border-gray-300" />
+                    <button onClick={() => setPasswordVisibility(!passwordVisibility)} className="absolute bottom-4 right-4">
+                        {passwordVisibility ? <MdVisibilityOff/> : <MdVisibility/>}
+                    </button>
+                </div>
             </div>
             <div className="flex text-white text-sm mt-1 space-x-32">
                 <div className="flex justify-between">
