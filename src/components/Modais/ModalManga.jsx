@@ -1,6 +1,6 @@
 import React from "react"
 import "./Modais.css";
-export default function Modal({visible, onClose, img}){
+export default function Modal({visible , onClose, img}){
     const handleOnClose = (e) => {
         if (e.target.id === 'modal-blur') onClose();
     };

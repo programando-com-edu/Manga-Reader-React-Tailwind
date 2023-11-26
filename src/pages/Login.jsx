@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import LoginForm from "../components/Login/LoginForm";
 import CadastroForm from "../components/Login/CadastroForm";
 import OnePieceBanner from "../assets/onepiece-banner.webp";
@@ -15,7 +15,7 @@ function Login() {
   };
 
   return (
-    <div className="bg-gradient-to-tl from-black to-amethyst-800 flex h-screen">
+    <div className="flex h-screen">
       <div className="h-full w-[40%] hidden md:block px-8 py-4 rounded-full flex-shrink-0">
         <img
           src={OnePieceBanner}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { MdVisibilityOff, MdVisibility  } from "react-icons/md";
 
 function CadastroForm(){
@@ -9,7 +9,7 @@ function CadastroForm(){
         <>
             <div className="flex flex-col w-96 justify-start">
                 <label htmlFor="email" className="mb-2 text-amethyst-200 font-semibold">Email</label>
-                <input id="email" type="text" className="h-12 px-4 rounded-full border border-gray-300" />
+                <input id="email" type="email" className="h-12 px-4 rounded-full border border-gray-300" />
                 <label htmlFor="username" className="mb-2 mt-4 text-amethyst-200 font-semibold">Username</label>
                 <input id="username" type="text" className="h-12 px-4 rounded-full border border-gray-300" />
                 <div id="password-div" className="flex flex-col relative">
