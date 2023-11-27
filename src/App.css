@@ -1,6 +1,6 @@
 /* Navbar CSS */
 .navbar {
-  @apply bg-gradient-to-br from-amethyst-800 to-amethyst-600  h-20 flex justify-end items-center
+  @apply bg-gradient-to-br from-amethyst-800 to-amethyst-600 h-20 flex justify-between items-center
 }
 
 .menu-bars {
@@ -8,12 +8,12 @@
 }
 
 .nav-menu {
-  @apply bg-amethyst-800 w-64 h-full flex justify-center fixed top-0 -right-full duration-1000 ease-in-out transition-all 
+  @apply bg-amethyst-800 w-64 h-full flex justify-center fixed top-0 -right-64 duration-1000 transition-all 
 
 }
 
 .nav-menu.active {
-  @apply right-0 duration-1000 ease-in transition-all
+  @apply right-0 duration-1000 transition-all
 
 }
 
