@@ -12,6 +12,7 @@ import Products from "./pages/Products";
 import Home from "./pages/Home";
 import Reports from "./pages/Reports";
 import Login from "./pages/Login";
+import Comic from "./pages/Comic";
 import ForgotPassword from "./pages/ForgotPassword";
 import Navbar from "./components/Navbar";
 import "./App.css";
@@ -31,6 +32,7 @@ const router = createBrowserRouter(
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/reports" element={<Reports />} />
+        <Route path="/Comic" element={<Comic />} />
       </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
