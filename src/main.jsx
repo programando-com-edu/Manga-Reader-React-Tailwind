@@ -32,7 +32,7 @@ const router = createBrowserRouter(
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/reports" element={<Reports />} />
-        <Route path="/Comic" element={<Comic />} />
+        <Route path="/comic/:comicId" element={<Comic />} />
       </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
