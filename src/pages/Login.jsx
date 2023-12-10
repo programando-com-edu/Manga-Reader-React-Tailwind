@@ -24,7 +24,7 @@ function Login() {
         />
       </div>
       <div className="flex flex-col items-center w-full h-full">
-        <div className="bg-amethyst-400 h-14 w-80 mt-32 lg:mt-40 2xl:mt-56 relative flex items-center rounded-full">
+        <div className="bg-amethyst-400 h-14 w-80 mt-32 lg:mt-40 xl:mt-16 2xl:mt-56 relative flex items-center rounded-full">
           <div className={`absolute h-10 w-36 rounded-full bg-amethyst-800 transition-all duration-700 ${
             isCadastroForm ? "left-40" : "left-2"
           }`}

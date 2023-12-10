@@ -4,30 +4,27 @@
 }
 
 .menu-bars {
-  @apply mr-8 text-3xl bg-transparent text-amethyst-200
+  @apply mr-8 text-3xl bg-transparent text-amethyst-100
 }
 
 .nav-menu {
-  @apply bg-amethyst-800 w-64 h-full flex justify-center fixed top-0 -right-64 duration-1000 transition-all 
-
+  @apply bg-amethyst-800 opacity-[95%] w-64 h-full flex justify-center fixed top-0 -right-64 duration-1000 transition-all 
 }
 
 .nav-menu.active {
   @apply right-0 duration-1000 transition-all
-
 }
 
 .nav-text {
-  @apply flex justify-start items-center py-2 pl-4 h-16
+  @apply flex justify-start items-center py-2 h-16
 }
 
 .nav-text a {
-  @apply text-black text-xl w-[95%] h-full flex items-center px-4
-
+  @apply text-amethyst-100 text-xl w-[100%] h-full flex items-center px-4
 }
 
 .nav-text a:hover {
-  @apply bg-black text-white
+  @apply bg-black text-white border border-y-amethyst-200 border-x-black
 }
 
 .nav-menu-items {

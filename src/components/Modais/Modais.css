@@ -3,7 +3,7 @@
 }
 
 .modal-box{
-    @apply bg-white text-black w-[900px] h-[540px] flex items-center rounded-xl py-6 px-8 space-x-8
+    @apply bg-amethyst-200 text-black w-[900px] h-[540px] flex items-center rounded-xl py-6 px-8 space-x-8
 }
 
 .modal-title{

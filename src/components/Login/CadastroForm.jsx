@@ -24,7 +24,7 @@ function CadastroForm(){
             <div className="flex justify-end w-96 mt-8">
                 <div className="w-36 h-12 rounded-full bg-amethyst-300 flex items-center justify-center">
                     <p className="font-semibold text-xl text-amethyst-900">
-                        Login
+                        Cadastre-se
                     </p>
                 </div>
             </div>

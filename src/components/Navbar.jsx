@@ -11,25 +11,31 @@ function Navbar() {
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
+  const [entrada, setEntrada] = useState('');
+  const handleChange = (event) => {
+    setEntrada(event.target.value);
+  };
 
   return (
     <>
       <IconContext.Provider value={{ color: "undefined" }}>
         <div className="navbar">
           <div className="flex items-center w-full justify-center">
-            <input id="search-input" className="h-12 w-[480px] rounded-full p-3 focus:outline-none focus:border-2 focus:border-amethyst-800 " type="text" />
-            
-            <label htmlFor="search-input"><FaSearch  className="text-white text-xl ml-4"/></label>
+            <input id="search-input" value={entrada} onChange={handleChange}
+             className="h-12 w-[480px] rounded-full p-3 focus:outline-none focus:border-2 focus:border-amethyst-800 " type="text" />
+            <a href={'/?title='+entrada}>
+              <label ><FaSearch  className="text-white text-xl ml-4"/></label>
+            </a>
           </div>
           <Link to="#" className="menu-bars">
-            <CgProfile onClick={showSidebar} />
+            <CgProfile className={sidebar ? "invisible" : ""} onClick={showSidebar} />
           </Link>
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showSidebar}>
             <li className="navbar-toggle">
               <Link to="#" className="menu-bars">
-                <AiIcons.AiOutlineClose />
+                <AiIcons.AiOutlineClose className="ml-2" />
               </Link>
             </li>
             {SidebarData.map((item, index) => {
@@ -37,7 +43,7 @@ function Navbar() {
                 <li key={index} className={item.cName}>
                   <Link to={item.path}>
                     {item.icon}
-                    <span>{item.title}</span>
+                    <span className="ml-6">{item.title}</span>
                   </Link>
                 </li>
               );
