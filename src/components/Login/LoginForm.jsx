@@ -28,7 +28,6 @@ function LoginForm(){
           console.error("Falha na autenticação");
         }
       } catch (error) {
-        console.log(username, password)
         console.error("Erro ao fazer login", error);
       }
     };
@@ -64,13 +63,13 @@ function LoginForm(){
                 </Link>
             </div>
             <div className="flex justify-end w-96 mt-8">
-                <div 
+                <button 
                  onClick={handleLogin}
                  className="w-36 h-12 rounded-full bg-amethyst-300 flex items-center justify-center">
                     <p className="font-semibold text-xl text-amethyst-900">
                         Login
                     </p>
-                </div>
+                </button>
             </div>
             </>
     )

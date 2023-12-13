@@ -20,7 +20,6 @@ function Home() {
         if (response.status === 200) {
           setData(response.data);
           setImages(response.data.images);
-          console.log(response.data)
         } else {
           console.error('Erro ao obter os quadrinhos');
         }
@@ -32,14 +31,55 @@ function Home() {
       fetchComics();
     }, []);
 
+    const comicRead = async () => {
+      try {
+        const accessToken = localStorage.getItem('access_token');
+  
+        // Certifique-se de que o token está disponível
+        if (!accessToken) {
+          console.error('Token de acesso não encontrado.');
+          return;
+        }
+  
+        const config = {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${accessToken}`,
+          },
+        };
+        const data = {
+          chapter: chapId
+        }
+        const response = await axios.post(`http://localhost:8000/comic-read/`, data, config);
+  
+        if (response.status === 200) {
+          console.log('salvo com sucesso')
+        } else {
+          console.error('Erro ao obter os quadrinhos');
+        }
+      } catch (error) {
+        console.error('Erro na requisição:', error);
+      }
+    };
+  
+    comicRead();
+
     const chapterElements = images.map((img) => (
       <img src={img} />
     ));
     const nextChap =  data.next_chap
     const prevChap =  data.prev_chap
+    const comicId =  data.comic_id
+    console.log(data.comic_id)
   return (
     <div className=" grid w-full p-6 justify-items-center">
-      <div className='w-full flex justify-end space-x-8 mb-8'>
+      <div className='w-full flex justify-between mb-8'>
+        <div>
+          <a className='bg-amethyst-700 w-40 h-10 rounded-lg text-amethyst-200 text-lg font-semibold flex items-center justify-center'
+           href={'/comic/' + comicId}>Página do capítulo</a>
+        </div>
+        <div className='flex space-x-8'>
+
         {prevChap !== null ? (
           <a
             className='bg-amethyst-700 w-24 h-10 rounded-lg text-amethyst-200 text-lg font-semibold flex items-center justify-center'
@@ -64,6 +104,7 @@ function Home() {
             Próximo
           </span>
         )}
+        </div>
       </div>
       {chapterElements} 
     </div>

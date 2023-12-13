@@ -28,7 +28,10 @@ function Home() {
 
       fetchComics();
     }, []);
-  console.log(comics)
+
+  
+
+    
   return (
     <div className="grid grid-cols-3 p-20 gap-y-16 justify-items-center">
       {comics.map((comic) => (

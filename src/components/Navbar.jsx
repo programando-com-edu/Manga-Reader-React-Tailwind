@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { CgProfile } from "react-icons/cg";
 import { FaSearch } from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
@@ -6,16 +6,61 @@ import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 import "../App.css";
 import { IconContext } from "react-icons";
+import axios from 'axios';
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
-
-  const showSidebar = () => setSidebar(!sidebar);
+  const [user, setUser] = useState(false);
   const [entrada, setEntrada] = useState('');
+  const showSidebar = () => setSidebar(!sidebar);
   const handleChange = (event) => {
     setEntrada(event.target.value);
   };
+  useEffect(() => {
+    // Função para fazer a requisição GET com token de acesso
+    const getUser = async () => {
+      try {
+        // Obtenha o token de acesso do localStorage
+        const accessToken = localStorage.getItem('access_token');
 
+        // Certifique-se de que o token está disponível
+        if (!accessToken) {
+          console.error('Token de acesso não encontrado.');
+          return;
+        }
+
+        // Configuração do cabeçalho com o token de acesso
+        const config = {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${accessToken}`,
+          },
+        };
+        // Realize a requisição GET usando o Axios com o token de acesso
+        const response_me = await axios.get('http://localhost:8000/me/', config);
+
+        if (response_me.status === 200) {
+          setUser(response_me.data);
+        } else {
+
+          console.error('Erro ao obter os quadrinhos');
+        }
+      } catch (error) {
+        console.error('Erro na requisição:', error);
+      }
+    };
+
+    getUser();
+  }, []);
+  const userComics = user ? (
+    
+    <li className="nav-text">
+      <Link to="/comics-read">
+        <AiIcons.AiOutlineUser />
+        <span className="ml-6">My comics</span>
+      </Link>
+    </li>
+  ) : null
   return (
     <>
       <IconContext.Provider value={{ color: "undefined" }}>
@@ -48,6 +93,7 @@ function Navbar() {
                 </li>
               );
             })}
+            {userComics}
           </ul>
         </nav>
       </IconContext.Provider>
